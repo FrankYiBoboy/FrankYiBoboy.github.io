@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>如何查看电脑预装操作系统密钥</title>
+      <link href="/2022/03/09/ru-he-cha-kan-dian-nao-yu-zhuang-cao-zuo-xi-tong-mi-yao/"/>
+      <url>/2022/03/09/ru-he-cha-kan-dian-nao-yu-zhuang-cao-zuo-xi-tong-mi-yao/</url>
+      
+        <content type="html"><![CDATA[<h1 id="如何查看电脑预装操作系统密钥"><a href="#如何查看电脑预装操作系统密钥" class="headerlink" title="如何查看电脑预装操作系统密钥"></a>如何查看电脑预装操作系统密钥</h1><h3 id="通过cmd命令即可查看"><a href="#通过cmd命令即可查看" class="headerlink" title="通过cmd命令即可查看"></a>通过cmd命令即可查看</h3><pre class="line-numbers language-CMD命令" data-language="CMD命令"><code class="language-CMD命令">wmic path softwarelicensingservice get OA3xOriginalProductKey<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>通过上述命令即可查看电脑预装操作系统的密钥</p><hr><h3 id="接下来提供修改系统密钥的方法："><a href="#接下来提供修改系统密钥的方法：" class="headerlink" title="接下来提供修改系统密钥的方法："></a>接下来提供修改系统密钥的方法：</h3><h4 id="第一种：通过设置修改"><a href="#第一种：通过设置修改" class="headerlink" title="第一种：通过设置修改"></a>第一种：通过设置修改</h4><p>我们可以通过Windows设置进行修改，通过<code>Win热键+i</code>进入设置界面，点击系统，点击下方关于即可找到修改密钥方法。</p><h4 id="第二种：通过cmd指令修改"><a href="#第二种：通过cmd指令修改" class="headerlink" title="第二种：通过cmd指令修改"></a>第二种：通过cmd指令修改</h4><p>1.以管理员身份打开命令提示符</p><p>2.输入指令</p><pre class="line-numbers language-CMD命令" data-language="CMD命令"><code class="language-CMD命令">slmgr.vbs &#x2F;upk<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>卸载系统已有密钥</p><pre class="line-numbers language-CMD指令" data-language="CMD指令"><code class="language-CMD指令">slmgr &#x2F;ipk (系统密钥)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>安装系统密钥，括号内输入购买的系统密钥</p><pre class="line-numbers language-CMD指令" data-language="CMD指令"><code class="language-CMD指令">slmgr.vbs -ato<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>激活密钥</p><p>通过三行指令即可修改系统密钥</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>GitHub中修改昵称和用户名</title>
+      <link href="/2022/02/19/github-zhong-xiu-gai-ni-cheng-he-yong-hu-ming/"/>
+      <url>/2022/02/19/github-zhong-xiu-gai-ni-cheng-he-yong-hu-ming/</url>
+      
+        <content type="html"><![CDATA[<h1 id="GitHub中修改昵称和用户名"><a href="#GitHub中修改昵称和用户名" class="headerlink" title="GitHub中修改昵称和用户名"></a>GitHub中修改昵称和用户名</h1><p>​网络上有很多教程关于GitHub的教学，但教程开始便会教学一些Git命令，对新手小白很不友好，本文旨在帮助GitHub小白解决修改昵称和用户名的最简易教程。</p><hr><hr><hr><hr><h3 id="一、修改昵称"><a href="#一、修改昵称" class="headerlink" title="一、修改昵称"></a>一、修改昵称</h3><p>​进入GitHub官网之后点击右上角头像区域，点击setting按钮。</p><p><img src="/images/GitHub%E4%B8%AD%E4%BF%AE%E6%94%B9%E6%98%B5%E7%A7%B0%E5%92%8C%E7%94%A8%E6%88%B7%E5%90%8D/1.png" alt="1"></p><p>​进入setting之后，在profile栏即可修改昵称，此昵称为访问者访问你的GitHub时所看到的昵称，如图示，如果只更改昵称，完成修改后，划到界面下方”Update profile”保存即可。</p><p><img src="/images/GitHub%E4%B8%AD%E4%BF%AE%E6%94%B9%E6%98%B5%E7%A7%B0%E5%92%8C%E7%94%A8%E6%88%B7%E5%90%8D/2.png" alt="2"></p><hr><h3 id="二、修改用户名"><a href="#二、修改用户名" class="headerlink" title="二、修改用户名"></a>二、修改用户名</h3><p>​同样上述操作，进入setting后点击左侧Account栏位进行用户名修改操作。</p><p><img src="/images/GitHub%E4%B8%AD%E4%BF%AE%E6%94%B9%E6%98%B5%E7%A7%B0%E5%92%8C%E7%94%A8%E6%88%B7%E5%90%8D/3.png" alt="3"></p><p>​点击图示Change usename。</p><p><img src="/images/GitHub%E4%B8%AD%E4%BF%AE%E6%94%B9%E6%98%B5%E7%A7%B0%E5%92%8C%E7%94%A8%E6%88%B7%E5%90%8D/4.png" alt="4"></p><p>​会出现如上图片提示，翻译为</p><p>[^英文大体翻译]: 我们不会为您的旧配置文件页面设置重定向。我们不会为网页网站设置重定向。我们将为您的存储库创建重定向(Web和Git Access）。</p><p>​点击”I Understand,let’s change my username”按钮进行修改</p><p><img src="/images/GitHub%E4%B8%AD%E4%BF%AE%E6%94%B9%E6%98%B5%E7%A7%B0%E5%92%8C%E7%94%A8%E6%88%B7%E5%90%8D/5.png" alt="5"></p><p>$$<br>用户名只能包含字母数字字符或单连字符，不能以连字符开头或结尾<br>$$</p><h3 id="三、点击”Change-my-username”即可完成修改。"><a href="#三、点击”Change-my-username”即可完成修改。" class="headerlink" title="三、点击”Change my username”即可完成修改。"></a>三、点击”Change my username”即可完成修改。</h3>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
+</search>
