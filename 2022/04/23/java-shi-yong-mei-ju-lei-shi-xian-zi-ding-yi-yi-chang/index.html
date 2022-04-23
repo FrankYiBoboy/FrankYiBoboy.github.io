@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="查看电脑预装操作系统密钥, 清风挽心">
-    <meta name="description" content="部分用户在Windows系统之后忘记系统密钥，本文旨在提供查看电脑预装系统密钥方法">
+    <meta name="keywords" content="Java使用枚举类实现自定义异常, 清风挽心">
+    <meta name="description" content="通过枚举类实现自定义异常">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>查看电脑预装操作系统密钥 | 清风挽心</title>
+    <title>Java使用枚举类实现自定义异常 | 清风挽心</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -297,12 +297,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">查看电脑预装操作系统密钥</h1>
+                    <h1 class="description center-align post-title">Java使用枚举类实现自定义异常</h1>
                 </div>
             </div>
         </div>
@@ -418,8 +418,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%85%B6%E4%BB%96%E6%8A%80%E6%9C%AF/">
-                                <span class="chip bg-color">其他技术</span>
+                            <a href="/tags/Java%E7%9F%A5%E8%AF%86/">
+                                <span class="chip bg-color">Java知识</span>
                             </a>
                         
                     </div>
@@ -434,7 +434,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-03-09
+                    2022-04-23
                 </div>
                 
 
@@ -443,7 +443,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    200
+                    431
                 </div>
                 
 
@@ -463,23 +463,107 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="查看电脑预装操作系统密钥"><a href="#查看电脑预装操作系统密钥" class="headerlink" title="查看电脑预装操作系统密钥"></a>查看电脑预装操作系统密钥</h1><h3 id="通过cmd命令即可查看"><a href="#通过cmd命令即可查看" class="headerlink" title="通过cmd命令即可查看"></a>通过cmd命令即可查看</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">wmic path softwarelicensingservice get OA3xOriginalProductKey<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+                <h1 id="Java使用枚举类实现自定义异常"><a href="#Java使用枚举类实现自定义异常" class="headerlink" title="Java使用枚举类实现自定义异常"></a>Java使用枚举类实现自定义异常</h1><blockquote>
+<p>文章开头先阐述一些关于<mark>异常</mark>的知识：</p>
+</blockquote>
+<ol>
+<li>Java异常的根本父类为Throwable, Throwable有两个子类：Error和Exception。</li>
+<li>Exception常见的子类有：<em>DataFormatException, IOException， NoSuchFieldException， RuntimeException, SQLException, TimeoutException。</em></li>
+<li><em>RuntimeException</em>常见的子类有：<em>BufferOverflowException, ClassCastException, IndexOutOfBoundsException,NullPointerException, SystemException。</em></li>
+<li><em>Error</em>不需要讨论，这些错误是正常编码不会出现或者在程序层面无法处理的事情。</li>
+<li><em>Error</em>和<em>RuntimeException</em>是运行时异常，其他的都是非运行时异常。运行时异常即需要<em>try-catch</em>包裹才可正常编译通过的异常。</li>
+</ol>
+<h2 id="现在开始编写自定义异常。"><a href="#现在开始编写自定义异常。" class="headerlink" title="现在开始编写自定义异常。"></a>现在开始编写自定义异常。</h2><h4 id="1-创建ErrorCode接口"><a href="#1-创建ErrorCode接口" class="headerlink" title="1.  创建ErrorCode接口"></a>1.  创建<mark>ErrorCode</mark>接口</h4><blockquote>
+<p>编写自定义异常代码</p>
+</blockquote>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">ErrorCode</span> <span class="token punctuation">&#123;</span>
 
-<p>通过上述命令即可查看电脑预装操作系统的密钥</p>
-<hr>
-<h3 id="接下来提供修改系统密钥的方法："><a href="#接下来提供修改系统密钥的方法：" class="headerlink" title="接下来提供修改系统密钥的方法："></a>接下来提供修改系统密钥的方法：</h3><h4 id="第一种：通过设置修改"><a href="#第一种：通过设置修改" class="headerlink" title="第一种：通过设置修改"></a>第一种：通过设置修改</h4><p>我们可以通过Windows设置进行修改，通过<code>Win热键+i</code>进入设置界面，点击系统，点击下方关于即可找到修改密钥方法。</p>
-<h4 id="第二种：通过cmd指令修改"><a href="#第二种：通过cmd指令修改" class="headerlink" title="第二种：通过cmd指令修改"></a>第二种：通过cmd指令修改</h4><p>1.以管理员身份打开命令提示符</p>
-<p>2.输入指令</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">slmgr.vbs &#x2F;upk<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+    <span class="token comment">/**
+     * 获取错误码
+     * @return
+     */</span>
+    <span class="token class-name">String</span> <span class="token function">getCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<p>卸载系统已有密钥</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">slmgr &#x2F;ipk (系统密钥)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+    <span class="token comment">/**
+     * 获取错误信息
+     * @return
+     */</span>
+    <span class="token class-name">String</span> <span class="token function">getMsg</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>安装系统密钥，括号内输入购买的系统密钥</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">slmgr.vbs -ato<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p>激活密钥</p>
-<p>通过三行指令即可修改系统密钥</p>
+
+<h4 id="2-创建MyCodeEnum枚举类"><a href="#2-创建MyCodeEnum枚举类" class="headerlink" title="2. 创建MyCodeEnum枚举类"></a>2. 创建<mark>MyCodeEnum</mark>枚举类</h4><blockquote>
+<p>编写代码实现接口中的所有方法</p>
+</blockquote>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">enum</span> <span class="token class-name">MyCodeEnum</span> <span class="token keyword">implements</span> <span class="token class-name">ErrorCode</span><span class="token punctuation">&#123;</span>
+    <span class="token function">NOT_FOUND_PAGE</span><span class="token punctuation">(</span><span class="token string">"404"</span><span class="token punctuation">,</span><span class="token string">"找不到网站资源"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token function">NOT_FOUND_FILE</span><span class="token punctuation">(</span><span class="token string">"888"</span><span class="token punctuation">,</span><span class="token string">"找不到文件资源"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token function">NOT_O_TEN</span><span class="token punctuation">(</span><span class="token string">"233"</span><span class="token punctuation">,</span><span class="token string">"只能求10以内的加法"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">;</span>
+
+    <span class="token class-name">MyCodeEnum</span><span class="token punctuation">(</span><span class="token class-name">String</span> code<span class="token punctuation">,</span><span class="token class-name">String</span> msg<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>code <span class="token operator">=</span> code<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>msg <span class="token operator">=</span> msg<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">final</span> <span class="token class-name">String</span> code<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">final</span> <span class="token class-name">String</span> msg<span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> code<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getMsg</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> msg<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h4 id="3-创建MyException类继承RunTimeException"><a href="#3-创建MyException类继承RunTimeException" class="headerlink" title="3. 创建MyException类继承RunTimeException"></a>3. 创建<mark>MyException</mark>类继承<mark>RunTimeException</mark></h4><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyException</span> <span class="token keyword">extends</span> <span class="token class-name">RuntimeException</span><span class="token punctuation">&#123;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">MyException</span><span class="token punctuation">(</span><span class="token class-name">String</span> message<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">super</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">MyException</span><span class="token punctuation">(</span><span class="token class-name">ErrorCode</span> errorCode<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">super</span><span class="token punctuation">(</span>errorCode<span class="token punctuation">.</span><span class="token function">getCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">&#125;</span>
+
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h4 id="4-在StringTest类中测试自定义异常，同时可通过枚举选择异常类型"><a href="#4-在StringTest类中测试自定义异常，同时可通过枚举选择异常类型" class="headerlink" title="4. 在StringTest类中测试自定义异常，同时可通过枚举选择异常类型"></a>4. 在<mark>StringTest</mark>类中测试自定义异常，同时可通过枚举选择异常类型</h4><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>junit<span class="token punctuation">.</span></span><span class="token class-name">Test</span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ThrowTest</span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">sum</span><span class="token punctuation">(</span><span class="token keyword">int</span> numberA<span class="token punctuation">,</span> <span class="token keyword">int</span> numberB<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">MyException</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>numberA <span class="token operator">></span> <span class="token number">10</span> <span class="token operator">||</span> numberB <span class="token operator">></span> <span class="token number">10</span> <span class="token operator">||</span> numberA <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token operator">||</span> numberB <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">MyException</span><span class="token punctuation">(</span><span class="token class-name">MyCodeEnum</span><span class="token punctuation">.</span>NOT_O_TEN<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">return</span> numberA <span class="token operator">+</span> numberB<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">demo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">try</span> <span class="token punctuation">&#123;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"两数之和为: "</span> <span class="token operator">+</span> <span class="token function">sum</span><span class="token punctuation">(</span><span class="token number">19</span><span class="token punctuation">,</span><span class="token number">12</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">MyException</span> e<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p>异常抛出结果如下：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name"><span class="token namespace">com<span class="token punctuation">.</span>company<span class="token punctuation">.</span></span>MyException</span><span class="token operator">:</span> 只能求<span class="token number">10</span>以内的加法<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 
                 
             </div>
@@ -506,7 +590,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://frankyiboboy.github.io/2022/03/09/cha-kan-dian-nao-yu-zhuang-cao-zuo-xi-tong-mi-yao/">https://frankyiboboy.github.io/2022/03/09/cha-kan-dian-nao-yu-zhuang-cao-zuo-xi-tong-mi-yao/</a>
+                    <a href="https://frankyiboboy.github.io/2022/04/23/java-shi-yong-mei-ju-lei-shi-xian-zi-ding-yi-yi-chang/">https://frankyiboboy.github.io/2022/04/23/java-shi-yong-mei-ju-lei-shi-xian-zi-ding-yi-yi-chang/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -544,8 +628,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%85%B6%E4%BB%96%E6%8A%80%E6%9C%AF/">
-                                    <span class="chip bg-color">其他技术</span>
+                                <a href="/tags/Java%E7%9F%A5%E8%AF%86/">
+                                    <span class="chip bg-color">Java知识</span>
                                 </a>
                             
                         </div>
@@ -719,9 +803,56 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2022/04/23/java-shi-yong-mei-ju-lei-shi-xian-zi-ding-yi-yi-chang/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Java使用枚举类实现自定义异常">
+                        
+                        <span class="card-title">Java使用枚举类实现自定义异常</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            通过枚举类实现自定义异常
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-23
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Frank Wang
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Java%E7%9F%A5%E8%AF%86/">
+                        <span class="chip bg-color">Java知识</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2022/04/17/java-dan-li-she-ji-mo-shi/">
                     <div class="card-image">
@@ -739,9 +870,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-04-17
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-17
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -755,52 +886,6 @@
                     
                     <a href="/tags/Java%E7%9F%A5%E8%AF%86/">
                         <span class="chip bg-color">Java知识</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
-            </div>
-            <div class="card">
-                <a href="/2022/03/09/cha-kan-dian-nao-yu-zhuang-cao-zuo-xi-tong-mi-yao/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="查看电脑预装操作系统密钥">
-                        
-                        <span class="card-title">查看电脑预装操作系统密钥</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            部分用户在Windows系统之后忘记系统密钥，本文旨在提供查看电脑预装系统密钥方法
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-09
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            Frank Wang
-                            
-                        </span>
-                    </div>
-                </div>
-
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E5%85%B6%E4%BB%96%E6%8A%80%E6%9C%AF/">
-                        <span class="chip bg-color">其他技术</span>
                     </a>
                     
                 </div>
